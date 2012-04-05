@@ -23,9 +23,7 @@ endfunction
 let s:kind.action_table.preview = { 'description' : 'preview note' }
 function! s:kind.action_table.preview.func(candidate)
   let todo = unite#todo#struct(a:candidate.source__line)
-  if filereadable(todo.note)
-    execute ':pedit ' . todo.note
-  endif
+  execute ':pedit ' . todo.note
 endfunction
 
 " TODO edit_titleと同じ処理。移譲する設定があるはず
